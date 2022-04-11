@@ -1,1 +1,1 @@
-print(f'Answer: \n\n% \nf-strings \nstr.format')
+print("Answer: b, d")
