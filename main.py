@@ -1,1 +1,1 @@
-print("The result is: \n\n['Doctor Who', 'Friends']")
+[0:len(sequence):1]
