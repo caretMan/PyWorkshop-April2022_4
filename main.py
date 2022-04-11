@@ -1,2 +1,2 @@
-string = "no clouds here to spy on pets"
-print(string[::5][::-1])
+email = 'someone@yougotmail.com'
+print(email[:-15])
