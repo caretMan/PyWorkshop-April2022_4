@@ -1,3 +1,4 @@
-F = float(input())
-D = int(input())
-print(f'%.{D}f' % F)
+Film = input()
+Director = input()
+Year = input()
+print(f'{Film} (dir. {Director}) came out in {Year}')
