@@ -1,2 +1,1 @@
-S = input()
-print(f'{S} has {len(S)} letters')
+print(f'Answer: \n\n% \nf-strings \nstr.format')
