@@ -1,4 +1,2 @@
-Film = input()
-Director = input()
-Year = input()
-print(f'{Film} (dir. {Director}) came out in {Year}')
+S = input()
+print(f'{S} has {len(S)} letters')
