@@ -1,3 +1,7 @@
-students = ['Денис', 'Дима', 'Ваня', 'Дима', 'Дима', 'Лёха', 'Вова', 'Вадим', 'Богдан', 'Юра', 'Антон', 'Артем', 'Костя']
-for i, students in enumerate(students, start = 1):
-  print(f'Student{i} > {students}')
+Part1, Part2 = input(), input()
+P1letters = [Part1[i] for i in range(len(Part1))]
+P2letters = [Part2[i] for i in range(len(Part2))]
+Name = ''
+for P1letter, P2letter in zip(P1letters, P2letters):
+  Name = f'{Name}{P1letter}{P2letter}'
+print(Name)
