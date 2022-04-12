@@ -1,14 +1,3 @@
-from random import randint
-
-
-def is_positive(a):
-  if a > 0:
-    return True
-
-
-def find_positive(my_list):
-  return(list(filter(is_positive, my_list)))
-
-
-my_list = [randint(-1000, 1000) for _ in range(25)]
-print(f'{my_list}\n\n{find_positive(my_list)}')
+students = ['Денис', 'Дима', 'Ваня', 'Дима', 'Дима', 'Лёха', 'Вова', 'Вадим', 'Богдан', 'Юра', 'Антон', 'Артем', 'Костя']
+for i, students in enumerate(students, start = 1):
+  print(f'Student{i} > {students}')
