@@ -1,2 +1,2 @@
-# Output for A: [11, 13, 15, 17]
-# Output for B: [1, 2, 3, 4, 10, 11, 12, 13]
+def my_product(list_1, list_2):
+  return list(map(lambda x, y: x * y, list_1, list_2))
