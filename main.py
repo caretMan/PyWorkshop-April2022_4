@@ -1,8 +1,6 @@
+a = int(input())
+b = int(input())
 try:
-  	print("Hello,", name)
-except NameError:
-  print("Hello, stranger!")
-else:
-  print("What a beautiful name you have!")
-finally:
-  print("Hope to see you soon!")
+  print('%.1f' % (a / b))
+except ZeroDivisionError:
+  print("The Error!")
