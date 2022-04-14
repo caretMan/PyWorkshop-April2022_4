@@ -5,7 +5,7 @@ start = perf_counter()
 D = []
 i = 2
 while i ** 2 <= N:
-  if (i % 6 == 1 or i % 6 == 5) and N % i == 0:
+  if (i % 6 == 1 or i % 6 == 5 or i == 2 or i == 3) and N % i == 0:
     k = 2
     while k ** 2 <= i:
       if i % k == 0:
@@ -18,4 +18,4 @@ while i ** 2 <= N:
 print(' '.join(list(map(str, D))))
 print(f'\nTime: {perf_counter() - start} seconds')
 
-#Time for 1_000_000_000: 0.09607347099881736 seconds
+#Time for 1_000_000_000: 0.10492974000044342 seconds
