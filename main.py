@@ -1,1 +1,1 @@
-# ArithmeticError
+# d - will not be executed if the exception in try block doesn't match the specified exception
