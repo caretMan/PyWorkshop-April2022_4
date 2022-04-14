@@ -1,9 +1,1 @@
-first = int(input())
-second = int(input())
-
-if first > second:
-    print("The first one wins")
-elif second > first:
-    print("The second one wins")
-else:
-    print("Draw")
+# d - The program is executed until the line with an exception and then it returns a traceback.
