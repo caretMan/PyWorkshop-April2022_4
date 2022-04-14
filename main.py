@@ -1,1 +1,1 @@
-# d - The program is executed until the line with an exception and then it returns a traceback.
+# ArithmeticError
