@@ -1,3 +1,9 @@
-# TypeError -> len(42)
-# ValueError -> int('twenty')
-# ZeroDivisionError -> print(7 - 7 / 0 + 1)
+first = int(input())
+second = int(input())
+
+if first > second:
+    print("The first one wins")
+elif second > first:
+    print("The second one wins")
+else:
+    print("Draw")
