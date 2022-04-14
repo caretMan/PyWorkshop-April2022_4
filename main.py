@@ -1,6 +1,6 @@
 N = int(input())
 D = []
-for i in range(1, N):
+for i in range(2, N):
   if N % i == 0:
     k = 2
     while k < i:
