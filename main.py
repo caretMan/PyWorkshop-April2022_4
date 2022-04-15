@@ -1,5 +1,5 @@
 try:
-  r = 5 // 1
+  r = 5 // 0
 except ZeroDivisionError:
   print('Error!')
 else:
