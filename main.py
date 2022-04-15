@@ -27,4 +27,4 @@ while i ** 2 <= N:
 print(' '.join(list(map(str, D))))
 print(f'\nTime: {perf_counter() - start} seconds')
 
-#Time for 1_000_000_000: 0.032630700000000346 seconds
+#Time for 1_000_000_000: 0.12927096299972618 seconds
