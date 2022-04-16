@@ -1,2 +1,1 @@
-# Traceback:
-# Exception: Something went wrong!
+# __str__
