@@ -1,12 +1,12 @@
-class NegativeSumError(Exception):
+class WordError(Exception):
     def __str__(self):
         return 'Error!'
 
-def sum_with_exceptions(a, b):
-    if a + b < 0:
-        raise NegativeSumError
+def check_w_letter(word):
+    if letter not in word:
+        raise WordError
     else:
-        return a + b
+        return word
 
-a, b = int(input()), int(input())
-print(sum_with_exceptions(a, b))
+letter, word = input(), input()
+print(check_w_letter(word))
