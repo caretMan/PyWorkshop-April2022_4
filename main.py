@@ -1,22 +1,23 @@
-# Task 1:
+class NotInBoundsError(Exception):
+  def __str__(self):
+    return 'There is an error!'
 
-from random import randint
+
+def check_integer(num):
+  if 45 <= num <= 67:
+    return num
+  else:
+    raise NotInBoundsError
 
 
-N = [randint(0, 1000) for _ in range(14)]
-print(N)
-k = int(input())
-ChunksWithMaxLen, MinLen = len(N) % k, len(N) // k
-for i in range(ChunksWithMaxLen):
-  N.append(N[:MinLen + 1])
-  N = N[MinLen + 1:]
-for i in range(k - ChunksWithMaxLen):
-  N.append(N[:MinLen])
-  N = N[MinLen:]
-print(N)
+def error_handling(num):
+  try:
+    check_integer(num)
+  except NotInBoundsError as err:
+    print(err)
+  else:
+    print(num)
 
-# Task 2: Добавляем к концу массива N подмассивы, состоящие из количества элементов в начале массива, равного результату целочисленного деления количества элементов в первоначальном массиве на количество подмассивов плюс 1, N % k раз и подмассивы, состоящие из количества элементов в начале массива, равного результату целочисленного деления количества элементов в первоначальном массиве на количество подмассивов, k - (N % k) раз.
 
-# Task 3: Длина N % k первых подмассивов - результат целочисленного деления количества элементов в первоначальном массиве на количество подмассивов плюс 1, длина остальны подмассивов - результат целочисленного деления количества элементов в первоначальном массиве на количество подмассивов
-
-# Task 4: Да, может. В первые подмассивы, количество которых равно количеству элементов в первоначальном массиве, добавляем по одному элементу первоначального массива, далее добавляем пустые подмассивы до необходимого заданного количества k
+num = int(input())
+error_handling(num)
