@@ -1,23 +1,27 @@
-class NotInBoundsError(Exception):
-  def __str__(self):
-    return 'There is an error!'
+from string import digits
 
 
-def check_integer(num):
-  if 45 <= num <= 67:
-    return num
-  else:
-    raise NotInBoundsError
+class NotWordError(Exception):
+  def __init__(self, x):
+    self.message = f'"{x}" is not a word, sorry!'
+    super().__init__(self.message)
 
 
-def error_handling(num):
+def check_word(word):
+  for i in range(len(digits)):
+    if digits[i] in word:
+      raise NotWordError(word)
+  return word
+
+
+def error_handling(word):
   try:
-    check_integer(num)
-  except NotInBoundsError as err:
+    check_word(word)
+  except NotWordError as err:
     print(err)
   else:
-    print(num)
+    print(word)
 
 
-num = int(input())
-error_handling(num)
+word = input()
+error_handling(word)
