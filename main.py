@@ -1,5 +1,7 @@
-from collections import Counter
+sentence = 'Chess set is a chessboard and a set of chessmen.'
+frequencies = {}
 
-List = input().split()
-List_C = Counter(List)
-print(List_C.most_common(1)[0][0])
+for i in sentence.split():
+  frequencies.setdefault(i, 0)
+  frequencies[i] += 1
+print(frequencies)
