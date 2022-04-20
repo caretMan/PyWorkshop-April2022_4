@@ -1,27 +1,23 @@
-def H_to_min(H, H_ans):
-  sum = 0
-  for i in range(len(H)):
-    if H[i] > H_ans:
-      sum += H_ans
+def binary(Min_time, step):
+  if Min_time < min(x, y):
+    Copies = 0
+    Copies1 = 0
+  else:
+    Copies = 1 + (Min_time - min(x, y)) // x + (Min_time - min(x, y)) // y
+    if Min_time - 1 < min(x, y):
+      Copies1 = 0
     else:
-      sum += H[i]
-  return sum
-
-def binary(H_ans, step):
-  H_new = H_to_min(H, H_ans)
-  H_new1 = H_to_min(H, H_ans + 1)
+      Copies1 = 1 + (Min_time - 1 - min(x, y)) // x + (Min_time - 1 - min(x, y)) // y
   if step <= 1:
     step = 2
-  if H_ans * N <= H_new + M and (H_ans + 1) * N > H_new1 + M:
-    return H_ans
-  if H_ans * N <= H_new + M:
+  if Copies >= N and Copies1 < N:
+    return Min_time
+  if Copies >= N:
     step = step // 2
-    return binary(H_ans + step, step)
-  if H_ans * N > H_new + M:
+    return binary(Min_time - step, step)
+  if Copies < N:
     step = step // 2
-    return binary(H_ans - step, step)
+    return binary(Min_time + step, step)
 
-N = int(input())
-H = list(map(int, input().split()))
-M = int(input())
-print(binary(min(H), min(H)))
+N, x, y = map(int, input().split())
+print(binary(N // min(x, y), N // min(x, y)))
