@@ -25,4 +25,7 @@ with open('passwords.txt', 'r', encoding='utf-8') as file:
 if '\n' in letters:
   freqs.pop(letters.index('\n'))
   letters.remove('\n')
+max_freq = max(freqs) + 1
+for i in range(len(freqs)):
+  freqs[i] = max_freq - freqs[i]
 print(''.join(list(map(str, [choices(letters, freqs)[0] for _ in range(randint(6, 10))]))))
