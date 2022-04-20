@@ -1,7 +1,6 @@
-sentence = 'Chess set is a chessboard and a set of chessmen.'
-frequencies = {}
-
-for i in sentence.split():
-  frequencies.setdefault(i, 0)
-  frequencies[i] += 1
-print(frequencies)
+random_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+word = input()
+try:
+  print(random_dict[word])
+except KeyError:
+  print('Not in the dictionary')
