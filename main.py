@@ -1,10 +1,15 @@
-from collections import Counter
+def binary(A, t, l):
+  if l == 0:
+    l = 2
+  if A >= t ** 2 and A < (t + 1) ** 2:
+    return t
+  if A > t ** 2:
+    l = l // 2
+    return binary(A, t + l, l)
+  if A < t ** 2:
+    l = l // 2
+    return binary(A, t - l, l)
 
 
-text = ("all I want is a proper cup of coffee made in a proper copper coffee pot. "
-        "I may be off my dot but I want a cup of coffee from a proper coffee pot.")
-
-n = int(input())
-List_C = Counter(text.split())
-for i in range(n):
-  print(List_C.most_common(n)[i][0], List_C.most_common(n)[i][1])
+A = int(input())
+print(binary(A, A // 2, A))
