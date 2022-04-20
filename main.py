@@ -1,16 +1,27 @@
-def binary(A, step):
-  A_without_unlucky = A - A // 13 - A // 17 + A // (13 * 17)
-  A1_without_unlucky = (A + 1) - (A + 1) // 13 - (A + 1) // 17 + (A + 1) // (13 * 17)
-  if step == 0:
+def H_to_min(H, H_ans):
+  sum = 0
+  for i in range(len(H)):
+    if H[i] > H_ans:
+      sum += H_ans
+    else:
+      sum += H[i]
+  return sum
+
+def binary(H_ans, step):
+  H_new = H_to_min(H, H_ans)
+  H_new1 = H_to_min(H, H_ans + 1)
+  if step <= 1:
     step = 2
-  if N >= A_without_unlucky and N < A1_without_unlucky:
-    return A
-  if N > A_without_unlucky:
+  if H_ans * N <= H_new + M and (H_ans + 1) * N > H_new1 + M:
+    return H_ans
+  if H_ans * N <= H_new + M:
     step = step // 2
-    return binary(A + step, step)
-  if N <= A1_without_unlucky:
+    return binary(H_ans + step, step)
+  if H_ans * N > H_new + M:
     step = step // 2
-    return binary(A - step, step)
+    return binary(H_ans - step, step)
 
 N = int(input())
-print(binary(3 * N // 2, N))
+H = list(map(int, input().split()))
+M = int(input())
+print(binary(min(H), min(H)))
