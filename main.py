@@ -1,4 +1,1 @@
-# cyan
-# magenta
-# yellow
-# key color
+# cyanmagentayellowkey color
